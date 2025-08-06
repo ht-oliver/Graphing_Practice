@@ -5,13 +5,28 @@
 #usethis::use_git()
 #usethis::use_github()
 
-f_x <- function(x) {((x^2 + 2*x - 14)^2 +1)}
-idiot <- function(n) {sin(n)}
+f_x <- function(x) {
+  ((3*x^2 - 2*x + 3)^2)
+  }
+
+my_data_range <- data.frame(x = c(-20, 20))
+
+df_dx <- D(expr = expression(
+  ((3*x^2 - 2*x + 3)^2)),
+  name = "x")
+
+df_dx
+
+df_dx_fun <- function(x) {
+  2 * ((3 * (2 * x) - 2) * (3 * x^2 - 2 * x + 3))
+}
+
+ggplot(data = my_data_range, aes(x = x)) +
+  geom_function(fun = f_x, color = "orange") +
+  geom_function(fun = df_dx_fun, color = "blue")
 
 
-x <- seq(from = -20, to = 20, by = 1)
 
-ggplot() + xlim(c(-20,20)) + geom_function(fun = f_x)
 
 
 
