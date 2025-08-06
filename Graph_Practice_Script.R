@@ -19,11 +19,10 @@ df_dx <- D(expr = expression(
   ((3*x^2 - 2*x + 3)^2)),
   name = "x")
 
-## return the derivative of your input function from the console
-
+## ask the console to tell you what your new derivative object looks like
 df_dx
 
-# take the returned derivative from the console, and determine a new function
+# thanks for the derivative, console. Now I must determine a new function
 df_dx_fun <- function(x) {
   2 * ((3 * (2 * x) - 2) * (3 * x^2 - 2 * x + 3))
 }
